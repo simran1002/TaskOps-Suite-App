@@ -1,4 +1,5 @@
-// auth.js
+require("dotenv").config();
+
 const passport = require('passport');
 const { OIDCStrategy } = require('passport-openidconnect');
 
