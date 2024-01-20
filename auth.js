@@ -6,11 +6,11 @@ passport.use(
   'oidc',
   new OIDCStrategy(
     {
-      issuer: 'YOUR_ISSUER_URL',
-      clientID: 'YOUR_CLIENT_ID',
-      clientSecret: 'YOUR_CLIENT_SECRET',
-      redirectURL: 'http://localhost:5000/auth/callback',
-      scope: 'openid profile email',
+      issuer:process.env.ISSUER ,
+      clientID: process.env.CLIENT_ID ,
+      clientSecret: process.env>CLIENT_SECRET ,
+      redirectURL: process.env.REDIRECT_URL,
+      scope:process.env.SCOPE ,
     },
     (issuer, sub, profile, accessToken, refreshToken, done) => {
       return done(null, profile);
