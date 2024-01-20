@@ -5,14 +5,14 @@ const passport = require('passport');
 const router = express.Router();
 
 router.get('/login', (req, res) => {
-  res.send('Login page'); // Replace with your login page
+  res.send('Login page'); 
 });
 
 router.get(
   '/login/oidc',
   passport.authenticate('oidc', {
-    successRedirect: '/dashboard', // Redirect after successful login
-    failureRedirect: '/login', // Redirect after failed login
+    successRedirect: '/dashboard', 
+    failureRedirect: '/login',
   })
 );
 

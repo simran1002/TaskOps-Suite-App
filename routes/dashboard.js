@@ -2,7 +2,6 @@
 const express = require('express');
 const router = express.Router();
 
-// Middleware to check if user is authenticated
 const isAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) {
     return next();
@@ -11,7 +10,7 @@ const isAuthenticated = (req, res, next) => {
 };
 
 router.get('/dashboard', isAuthenticated, (req, res) => {
-  res.send('Dashboard'); // Replace with your dashboard content
+  res.send('Dashboard');
 });
 
 module.exports = router;
