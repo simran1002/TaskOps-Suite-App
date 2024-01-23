@@ -23,7 +23,7 @@ cron.schedule('0 8 * * *', async () => {
 
   try {
     await transporter.sendMail(mailOptions);
-    console.log('Daily summary email sent successfully');
+    console.log('Daily summary email is sent successfully');
   } catch (error) {
     console.error('Error sending daily summary email:', error.message);
   }
