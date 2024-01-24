@@ -6,7 +6,6 @@ const http = require('http');
 const { connectDB } = require("./db/connection");
 const socketIo = require('socket.io');
 const session = require('express-session');
-const passport = require('passport');
 const winston = require('winston');
 const expressWinston = require('express-winston');
 const authRoutes = require('./routes/auth');
@@ -14,6 +13,8 @@ const errorHandler = require('./errorMiddleware');
 const translateRoutes = require('./routes/translate');
 const tasksRoutes = require('./routes/tasks');
 const Task = require('./model/task');
+const passport = require('passport');
+const OIDCStrategy = require('passport-openidconnect').Strategy;
 
 const app = express();
 const PORT = process.env.PORT || 5000;
