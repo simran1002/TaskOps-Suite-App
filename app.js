@@ -1,5 +1,4 @@
 require("dotenv").config();
-
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -18,7 +17,6 @@ const Task = require('./model/task');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-
 
 app.use(
     session({
@@ -52,8 +50,6 @@ app.use('/api/translate', translateRoutes);
 
 io.on('connection', (socket) => {
   console.log('A user connected');
-
-
   socket.on('taskUpdated', (updatedTask) => {
     io.emit('taskUpdated', updatedTask);
   });
