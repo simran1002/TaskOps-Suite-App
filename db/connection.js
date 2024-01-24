@@ -9,5 +9,5 @@ mongoose.connect(process.env.DB_URI ,{
     console.log("Connection is established");
 }).catch((e)=>{
     console.log(e)
-    console.log("No Connection Found");
+    console.log("No Connection is Found");
 });
